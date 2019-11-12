@@ -1,6 +1,11 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>Welcome to Film Diary!</h1>
-    <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+<% if logged_in? %>
+  <p>Logged in user: <%= current_user.name %></p>
+  <!-- see definition of logged_in? and current_user in app/helpers/sessions_helper.rb -->
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to Film Diary!</h1>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
   </div>
-</div>
+<% end %>
