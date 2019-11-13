@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   #this way, sign up page URL is /signup
   resources :users
+  resources :films, only: [:index, :show]
 end
