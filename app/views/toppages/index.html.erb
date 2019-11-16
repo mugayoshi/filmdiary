@@ -1,5 +1,9 @@
 <% if logged_in? %>
-  <p>Logged in user: <%= current_user.name %></p>
+  <div class="container">
+    <div>
+      <%= render 'films/films', films: @films %>
+    </div>
+  </div>
   <!-- see definition of logged_in? and current_user in app/helpers/sessions_helper.rb -->
 <% else %>
   <div class="center jumbotron">
