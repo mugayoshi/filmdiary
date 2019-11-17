@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-xs-4">
+  <aside class="col-xs-6">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%= @film.title %></h3>
@@ -10,12 +10,21 @@
     </div>
     
   </aside>
-  <div class="col-xs-8 container">
-    <div>
-      Director: <%= @film.director %>
+  <div class="col-xs-6 container">
+    <div class="panel panel-default">
+      <div>
+        Director<br> <%= @film.director %>
+      </div>
+      <div>
+        Released data<br> <%= @film.release_date %>
+      </div>
+      
     </div>
-    <div>
-      <%= @film.description %>
+    <div class="panel panel-default">
+      <div>
+        <%= @film.description %>
+      </div>
     </div>
+    
   </div>
 </div>

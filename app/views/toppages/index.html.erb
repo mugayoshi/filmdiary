@@ -1,5 +1,8 @@
 <% if logged_in? %>
   <div class="container">
+    <% if current_user.admin? %>
+      <%= link_to 'Add film', add_film_path, class: 'btn btn-lg btn-primary' %>
+    <% end %>
     <div>
       <%= render 'films/films', films: @films %>
     </div>

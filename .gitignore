@@ -21,4 +21,4 @@
 .byebug_history
 
 #Ignore image files for films
-/app/assets/images/films/*
+/public/uploads/film/image/*
