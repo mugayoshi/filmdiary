@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191117032124) do
+ActiveRecord::Schema.define(version: 20191117035347) do
 
   create_table "films", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 20191117032124) do
   create_table "watch_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "film_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "rate"
+    t.text     "comment",    limit: 65535
     t.index ["film_id"], name: "index_watch_relations_on_film_id", using: :btree
     t.index ["user_id", "film_id"], name: "index_watch_relations_on_user_id_and_film_id", unique: true, using: :btree
     t.index ["user_id"], name: "index_watch_relations_on_user_id", using: :btree

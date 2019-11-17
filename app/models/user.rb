@@ -8,5 +8,18 @@ class User < ApplicationRecord
   #has_secure_password is Rails' default function
   
   has_many :watch_relations
-  has_many :watch_films, through: :watch_relations, source: :film
+  has_many :watched_films, through: :watch_relations, source: :film
+  
+  def watch(film, rate, comment)
+    self.watch_relations.find_or_create_by(film_id: film.id, rate: rate, comment: comment)
+  end
+  
+  def undo_watch(film)
+    watch_relation = self.watch_relations.find_by(film_id: film.id)
+    watch_relation.destroy if watch_relation
+  end
+  
+  def watched?(film)
+    self.watch_relations.include?(film)
+  end
 end
