@@ -6,4 +6,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   #has_secure_password is Rails' default function
+  
+  has_many :watch_relations
+  has_many :watch_films, through: :watch_relations, source: :film
 end
