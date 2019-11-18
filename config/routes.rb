@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
   
   resources :films, only: [:index, :show, :create]
-  resources :watch_relations, only: [:create, :destroy]
+  resources :watch_relations, only: [:create, :destroy, :edit, :update]
 end

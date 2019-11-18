@@ -20,6 +20,6 @@ class User < ApplicationRecord
   end
   
   def watched?(film)
-    self.watch_relations.include?(film)
+    self.watched_films.include?(film)
   end
 end
