@@ -19,6 +19,17 @@ class FilmsController < ApplicationController
     @film = Film.find(params[:id])
     @wach_relation = current_user.watch_relations.find_by(film_id: @film.id)
   end
+  
+  def edit
+    @film = Film.find(params[:id])
+  end
+  
+  def update
+    @film = Film.find(params[:id])
+    @film.update(film_params)
+    flash[:success] = 'update the film info!'
+    redirect_to @film
+  end
 end
 
 private

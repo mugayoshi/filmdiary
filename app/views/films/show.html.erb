@@ -12,6 +12,12 @@
   </aside>
   <div class="col-xs-6 container">
     <div class="panel panel-default">
+      <% if current_user.admin? %>
+        <div>
+          <%= link_to 'Edit', edit_film_path, class: 'btn btn-lg btn-primary' %>
+        </div>
+      <% end %>
+      
       <div>
         Director<br> <%= @film.director %>
       </div>
