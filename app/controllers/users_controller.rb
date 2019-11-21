@@ -26,10 +26,21 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    flash[:success] = 'updated user info'
+    redirect_to @user
+  end
 end
 
 private
 
 def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
 end

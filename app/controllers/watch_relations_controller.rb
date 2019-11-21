@@ -3,13 +3,14 @@ class WatchRelationsController < ApplicationController
     film = Film.find(params[:film_id])
     current_user.watch(film, params[:watch_relation][:rate], params[:watch_relation][:comment])
     flash[:success] = 'watched this film!'
+    redirect_to film
   end
 
   def destroy
     film = Film.find(params[:film_id])
     current_user.undo_watch(film)
     flash[:success] = 'unwatched this film!'
-    redirect_to root_url
+    redirect_to film
   end
   
   def edit

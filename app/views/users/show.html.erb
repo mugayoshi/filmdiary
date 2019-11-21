@@ -5,11 +5,18 @@
         <h3 class="panel-title"><%= @user.name %></h3>
       </div>
       <div class="panel-body">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <% if @user.image? %>
+          <%= image_tag @user.image.url, height: "150"%>
+        <% else %>
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <% end %>
       </div>
     </div>
   </aside>
   <div class="col-xs-8">
+    <% if current_user == @user %>
+      <%= link_to 'Edit', edit_user_path, class: 'btn btn-lg btn-primary' %>
+    <% end %>
     <ul class="nav nav-tabs nav-justified">
       <li><a href="#">Film History</a></li>
       
