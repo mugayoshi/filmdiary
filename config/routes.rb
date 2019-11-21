@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :films, only: [:index, :show, :create, :edit, :update]
+  resources :films , only: [:index, :show, :create, :edit, :update] do
+    collection do
+      get 'search'
+    end
+  end
   resources :watch_relations, only: [:create, :destroy, :edit, :update]
 end

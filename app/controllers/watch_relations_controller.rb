@@ -1,4 +1,6 @@
 class WatchRelationsController < ApplicationController
+  before_action :require_user_logged_in
+  
   def create
     film = Film.find(params[:film_id])
     current_user.watch(film, params[:watch_relation][:rate], params[:watch_relation][:comment])

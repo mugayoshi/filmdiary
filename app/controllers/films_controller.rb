@@ -30,6 +30,11 @@ class FilmsController < ApplicationController
     flash[:success] = 'update the film info!'
     redirect_to @film
   end
+  
+  def search
+    @searched_films = Film.search(params[:search])
+    @searched_films = @searched_films.page(params[:page])
+  end
 end
 
 private
