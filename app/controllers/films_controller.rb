@@ -17,7 +17,7 @@ class FilmsController < ApplicationController
   
   def show
     @film = Film.find(params[:id])
-    @wach_relation = current_user.watch_relations.find_by(film_id: @film.id)
+    @watch_relation = current_user.watch_relations.find_by(film_id: @film.id)
   end
   
   def edit

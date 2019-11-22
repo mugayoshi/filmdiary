@@ -1,5 +1,5 @@
 <% if current_user.watched?(film) %>
-  <%= link_to 'Edit your rate on this film', edit_watch_relation_path, class: 'btn btn-lg btn-primary' %>
+  <%= render 'watch_relations/form', watch_relation: @watch_relation, film: @film %>
   <%= form_for(current_user.watch_relations.find_by(film_id: film.id), html: { method: :delete }) do |f| %>
     <%= hidden_field_tag :film_id, film.id %>
     <%= f.submit 'Unwatch', class: 'btn btn-danger btn-block' %>

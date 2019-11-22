@@ -7,7 +7,7 @@
     <li class="media">
       <div class="media-left">
         <% if user.image? %>
-          <%= image_tag user.image.url, height: "100" %>
+          <%= image_tag asset_path(user.image.url), height: "100" %>
         <% else %>
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         <% end %>
