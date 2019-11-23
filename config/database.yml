@@ -23,7 +23,9 @@ test:
   database: filmdiary_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: filmdiary_production
   username: filmdiary
   password: <%= ENV['MICROPOSTS_DATABASE_PASSWORD'] %>
