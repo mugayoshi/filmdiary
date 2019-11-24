@@ -7,8 +7,8 @@ if Rails.env.production?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: S3_info::ACCESS_KEY, # stored in s3_info.rb
-      aws_secret_access_key: S3_info::SECRET_ACCESS_KEY, # stored in s3_info.rb
+      aws_access_key_id: ENV['S3_ACCESS_KEY'],
+      aws_secret_access_key: ENV['S3_SECRET_ACCESS_KEY'],
       region: 'ap-northeast-1'  # this means regionTokyo
     }
     config.fog_directory  = 'film-diary-bucket' # bucket name
