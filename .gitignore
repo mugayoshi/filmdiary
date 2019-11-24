@@ -24,3 +24,6 @@
 /public/uploads/film/image/*
 /public/uploads/user/image/*
 /public/assets/*
+
+#Ignore credentials
+/config/initializers/s3_info.rb
