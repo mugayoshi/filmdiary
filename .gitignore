@@ -26,4 +26,4 @@
 /public/assets/*
 
 #Ignore credentials
-/lib/s3_info.rb
+/app/models/s3_info.rb
