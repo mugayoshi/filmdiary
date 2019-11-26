@@ -19,5 +19,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :watch_relations, only: [:create, :destroy, :edit, :update]
+  resources :watch_relations, only: [:create, :destroy, :edit, :update, :show]
 end

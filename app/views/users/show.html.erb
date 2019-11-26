@@ -6,7 +6,7 @@
       </div>
       <div class="panel-body">
         <% if @user.image? %>
-          <%= image_tag asset_path(@user.image.to_s), height: "150"%>
+          <%= image_tag asset_path(@user.image.to_s), height: "150", class: 'img-responsive' %>
         <% else %>
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         <% end %>
@@ -24,6 +24,5 @@
 </div>
 
 <div class="row">
-  <%= render 'films/films', films: @watched_films %>
-  
+  <%= render 'watch_relations/watch_relations', films: @watched_films %>
 </div>

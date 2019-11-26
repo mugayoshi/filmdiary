@@ -1,0 +1,47 @@
+<div class="row">
+  <aside class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @film.title %></h3>
+      </div>
+      <div class="panel-body">
+        <%= image_tag asset_path(@film.image.to_s), width: '240', height: '160', class: 'img-responsive' %>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="col-xs-6 container">
+    <div class="panel panel-default">
+      <% if current_user.admin? %>
+        <div>
+          <%= link_to 'Edit', edit_film_path, class: 'btn btn-lg btn-primary' %>
+        </div>
+      <% end %>
+      
+      <div class="film_info_label">Director<br></div>
+      <div class="film_info"><%= @film.director %></div>
+      <div class="film_info_label">Released date<br></div>
+      <div class="film_info_sub"><%= @film.release_date %></div>
+      <div class="film_info_label">Language<br></div>
+      <div class="film_info_sub"><%= @film.lang %></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <aside class="panel panel-default col-xs-6">
+   <div class="panel-body">
+    rate: <%= @watch_relation.rate %>
+    </div>
+    <div class="panel-body">
+      comment: <%= @watch_relation.comment %>
+    </div>
+  </aside>
+  <aside class="panel panel-default col-xs-6">
+    <div class="panel-body">
+      <%= @film.description %>
+    </div>
+  </aside>
+</div>
+
+<%= link_to 'back', user_path(@user) %>

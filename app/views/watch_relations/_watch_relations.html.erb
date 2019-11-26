@@ -1,0 +1,18 @@
+<div class="row">
+  <% films.each do |film| %>
+    <div class="container col-xs-4">
+      <div>
+        <%= image_tag asset_path(film.image.to_s), width: '240', height: '160', class: 'img-responsive' %>
+      </div>
+      <div>
+        <% User.left_joins(:watch_relations).select("users.*, watch_relations.*").where(watch_relations: {film_id: film.id, user_id: @user.id}).each do |rate_user| %>
+          <%= "rate: #{rate_user.rate}" %>
+        <% end %>
+      </div>
+      <div class="text-center">
+        <%= link_to film.title, watch_relation_path(WatchRelation.find_by(user_id: @user.id, film_id: film.id).id) %> 
+      </div>
+    </div>
+  <% end %>
+  <%= paginate films %>
+</div>

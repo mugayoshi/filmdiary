@@ -26,6 +26,12 @@ class WatchRelationsController < ApplicationController
     flash[:success] = 'updated the rating!'
     redirect_to root_url
   end
+  
+  def show
+    @watch_relation = WatchRelation.find(params[:id])
+    @user = User.find(@watch_relation.user_id)
+    @film = Film.find(@watch_relation.film_id)
+  end
 end
 
 private

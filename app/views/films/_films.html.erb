@@ -2,7 +2,7 @@
   <% films.each do |film| %>
     <div class="container col-xs-4">
       <div>
-        <%= image_tag asset_path(film.image.to_s), width: '240', height: '160' %>
+        <%= image_tag asset_path(film.image.to_s), width: '240', height: '160', class: 'img-responsive' %>
       </div>
       <div class="text-center">
         <%= link_to film.title, film_path(film.id) %>

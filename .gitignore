@@ -25,5 +25,4 @@
 /public/uploads/user/image/*
 /public/assets/*
 
-#Ignore credentials
-/app/models/s3_info.rb
+
