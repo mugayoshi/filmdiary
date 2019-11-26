@@ -29,15 +29,21 @@
 </div>
 
 <div class="row">
-  <aside class="panel panel-default col-xs-6">
-   <div class="panel-body">
-    rate: <%= @watch_relation.rate %>
+  <div class="card col-xs-6">
+    <div class="card-header">
+      Watch Log
     </div>
-    <div class="panel-body">
-      comment: <%= @watch_relation.comment %>
-    </div>
-  </aside>
-  <aside class="panel panel-default col-xs-6">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <% @watch_relation.rate.times do %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+      </li>
+      <li class="list-group-item"><%= @watch_relation.comment %></li>
+    </ul>
+  </div>
+  <aside class="panel panel-info col-xs-6">
+    <div class="panel-heading">About</div>
     <div class="panel-body">
       <%= @film.description %>
     </div>

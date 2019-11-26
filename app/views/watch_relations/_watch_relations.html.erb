@@ -4,9 +4,12 @@
       <div>
         <%= image_tag asset_path(film.image.to_s), width: '240', height: '160', class: 'img-responsive' %>
       </div>
-      <div>
+      <div class="text-center">
         <% User.left_joins(:watch_relations).select("users.*, watch_relations.*").where(watch_relations: {film_id: film.id, user_id: @user.id}).each do |rate_user| %>
-          <%= "rate: #{rate_user.rate}" %>
+          <!-- display rating number as stars-->
+          <% rate_user.rate.times do %>
+            <span class="glyphicon glyphicon-star"></span>
+          <% end %>
         <% end %>
       </div>
       <div class="text-center">
