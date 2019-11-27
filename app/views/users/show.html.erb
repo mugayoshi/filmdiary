@@ -6,7 +6,7 @@
       </div>
       <div class="panel-body">
         <% if @user.image? %>
-          <%= image_tag asset_path(@user.image.to_s), height: "150", class: 'img-responsive' %>
+          <%= image_tag asset_path(@user.image.to_s), class: 'img-responsive user_image' %>
         <% else %>
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         <% end %>
@@ -15,7 +15,7 @@
   </aside>
   <div class="col-xs-8">
     <% if current_user == @user %>
-      <%= link_to 'Edit', edit_user_path, class: 'btn btn btn-primary' %>
+      <%= link_to 'Edit', edit_user_path, class: 'btn btn-sm btn-primary' %>
     <% end %>
     <h3>
       <%= @user.name %> has watched <%= WatchRelation.where(user_id: @user.id).count %> films

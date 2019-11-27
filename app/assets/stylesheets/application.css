@@ -9,3 +9,11 @@
 .film_info_sub {
   color: teal;
 }
+
+.film_image {
+  object-fit: contain;
+}
+
+.user_image {
+  object-fit: contain
+}
