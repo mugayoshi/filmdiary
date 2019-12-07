@@ -5,7 +5,7 @@ class User < ApplicationRecord
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
   validates :image, presence: true
-  validates :password, confirmation: true
+  validates :password, presence: true, confirmation: true
   mount_uploader :image, ImageUploader
   has_secure_password
   #has_secure_password is Rails' default function
