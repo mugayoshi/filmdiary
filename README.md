@@ -1,10 +1,10 @@
 # Film Diary README
 
 ## Overview
-User can records films they have watched and rate them by numbers.   
-User can see what others think of films. 
-User can search films available in this service. 
-Admin can add and edit film records (including uploaing an image)  
+User can records films they have watched and rate them by numbers.      
+User can see what others think of films.   
+User can search films available in this service.   
+Admin can add and edit film records (including uploaing an image).    
 
 ## Used technologies
 * Ruby on Rails
